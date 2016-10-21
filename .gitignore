@@ -1,0 +1,4 @@
+target/
+*.log
+qrcode.png
+application.properties

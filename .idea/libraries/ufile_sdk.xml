@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ufile_sdk">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ufile_sdk.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
