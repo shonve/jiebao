@@ -29,7 +29,7 @@ public class CookController {
 
     @RequestMapping(value = "/label", method = {RequestMethod.POST, RequestMethod.GET})
     public void label(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
-        cookService.saveStyle1();
+        cookService.saveStyle1(0);
 
     }
 }

@@ -50,6 +50,9 @@ class CookBook {
     @Column(name = "seasoning")
     String seasoning;
 
+
+    @Column(name = "tmp_id")
+    Integer tmpId;
     /**
      * 关联的食谱单
      */
