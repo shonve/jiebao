@@ -235,7 +235,7 @@ public class QQService {
         QQGroup group = qqGroupRepository.findByGroupId(groupId);
         if (null != group && null != group.getOpenFlag() && group.getOpenFlag().intValue() == 1) {//开启聊天
             msg = robotService.getReplyContent(userName, content);
-        }else{
+        } else {
             reloadDiscusses();
         }
         if (StringUtils.isBlank(msg)) {
@@ -293,9 +293,7 @@ public class QQService {
         QQDiscuss discuss = qqDiscussRepository.findByDiscussId(discussId);
         if (null != discuss && null != discuss.getOpenFlag() && discuss.getOpenFlag().intValue() == 1) {//开启聊天
             msg = robotService.getReplyContent(userName, content);
-        }else
-
-        if (StringUtils.isBlank(msg)) {
+        } else if (StringUtils.isBlank(msg)) {
             return;
         }
         msg = generateAds(msg, "discuss", discussId);

@@ -31,19 +31,29 @@ class CookBook {
      */
     @Column(name = "tags", nullable = false)
     String tags;
+
     /**
      * 介绍
      */
-    @Column(name = "introduction", nullable = false)
+    @Column(name = "introduction", nullable = false, length = 10000)
     String introduction;
+
     /**
      * 主料
      */
     @Column(name = "ingredients", nullable = false)
     String ingredients;
+
     /**
      * 佐料
      */
     @Column(name = "seasoning")
     String seasoning;
+
+    /**
+     * 关联的食谱单
+     */
+    @ManyToOne
+    @JoinColumn(name = "style_id")
+    CookStyle cookStyle;
 }

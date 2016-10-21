@@ -1,9 +1,6 @@
 package cn.aage.robot.web;
 
 import cn.aage.robot.service.Md5Service;
-import cn.aage.robot.service.QQService;
-import cn.aage.robot.util.BaoUtil;
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,7 +25,6 @@ public class Md5Controller {
     public void qq(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
         md5Service.generateMd5();
     }
-
 
 
 }
