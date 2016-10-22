@@ -72,6 +72,6 @@ public class Test {
 //            System.out.println("000000");
 //        }
 
-        System.out.println(2190 %  30);
+        System.out.println(new Date());
     }
 }

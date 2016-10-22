@@ -44,7 +44,7 @@ public class CookService {
         String result = "";
         int total = 0;
         try {
-            String url = "http://apis.juhe.cn/cook/query.php?" + "key=bc0332edb6486141c03e8d88c308b66e&menu=" + URLEncoder.encode(name, "UTF-8") + "&rn=30" + "&pn=" + pn;
+            String url = "http://apis.juhe.cn/cook/query.php?" + "key=b28a5772b9d71f56037550ae73a2ad77&menu=" + URLEncoder.encode(name, "UTF-8") + "&rn=30" + "&pn=" + pn;
 
             HttpClient httpClient = HttpClientBuilder.create().build();
             HttpGet get = new HttpGet(url);
