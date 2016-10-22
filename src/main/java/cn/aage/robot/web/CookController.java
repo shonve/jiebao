@@ -26,10 +26,28 @@ public class CookController {
         cookService.saveCookBook(name);
 
     }
+    @RequestMapping(value = "/cook", method = {RequestMethod.POST, RequestMethod.GET})
+    public void cook(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        String name = request.getParameter("name");
+        name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
+        cookService.saveCook(name,0);
+
+    }
 
     @RequestMapping(value = "/label", method = {RequestMethod.POST, RequestMethod.GET})
     public void label(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
         cookService.saveStyle1(0);
+
+    }
+
+    @RequestMapping(value = "/arrange", method = {RequestMethod.POST, RequestMethod.GET})
+    public void arrange(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        cookService.arrange();
+
+    }
+    @RequestMapping(value = "/del", method = {RequestMethod.POST, RequestMethod.GET})
+    public void del(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        cookService.del();
 
     }
 }
