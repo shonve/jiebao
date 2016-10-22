@@ -19,13 +19,6 @@ public class CookController {
     @Autowired
     private CookService cookService;
 
-    @RequestMapping(value = "/qq", method = {RequestMethod.POST, RequestMethod.GET})
-    public void qq(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
-        String name = request.getParameter("name");
-        name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
-        cookService.saveCookBook(name);
-
-    }
     @RequestMapping(value = "/cook", method = {RequestMethod.POST, RequestMethod.GET})
     public void cook(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
         String name = request.getParameter("name");
