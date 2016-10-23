@@ -1,11 +1,11 @@
 package cn.aage.robot.service;
 
+import cn.aage.robot.model.ApiInterface;
 import cn.aage.robot.model.Message;
 import cn.aage.robot.model.QQConfig;
-import cn.aage.robot.model.Robot;
+import cn.aage.robot.repository.ApiInterfaceRepository;
 import cn.aage.robot.repository.MessageRepository;
 import cn.aage.robot.repository.QQConfigRepository;
-import cn.aage.robot.repository.RobotRepository;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -31,7 +31,7 @@ public class RobotService {
     @Autowired
     private QQConfigRepository qqConfigRepository;
     @Autowired
-    private RobotRepository robotRepository;
+    private ApiInterfaceRepository apiInterfaceRepository;
     @Autowired
     private Md5Service md5Service;
     @Autowired
@@ -50,13 +50,13 @@ public class RobotService {
         QQConfig config = qqConfigRepository.findByConfigName("enabled_robot");
 
         if (null != config) {
-            Robot robot = robotRepository.findByName(config.getConfigValue());
-            msgSource = robot.getRobotName();
+            ApiInterface api = apiInterfaceRepository.findByCode(config.getConfigValue());
+            msgSource = api.getName();
 
             String result = "";
             if (config.getConfigValue().equals("tuling")) {
                 try {
-                    String url = robot.getApiUrl() + "?" + "key=" + URLEncoder.encode(robot.getRobotKey(), "UTF-8")
+                    String url = api.getApiUrl() + "?" + "key=" + URLEncoder.encode(api.getApiKey(), "UTF-8")
                             + "&info=" + URLEncoder.encode(sendMsg, "UTF-8")
                             + "&userid=" + URLEncoder.encode(username, "UTF-8");
 
@@ -121,8 +121,8 @@ public class RobotService {
                 content = content.replace("图灵", "洁宝").replace("默认机器人", "洁宝机器人").replace("<br>", "\n");
             } else if (config.getConfigValue().equals("moli")) {
                 try {
-                    final String url = robot.getApiUrl() + "?" + "api_key=" + URLEncoder.encode(robot.getRobotKey(), "UTF-8")
-                            + "&limit=8" + "&api_secret=" + URLEncoder.encode(robot.getRobotSecret(), "UTF-8")
+                    final String url = api.getApiUrl() + "?" + "api_key=" + URLEncoder.encode(api.getApiKey(), "UTF-8")
+                            + "&limit=8" + "&api_secret=" + URLEncoder.encode(api.getApiSecret(), "UTF-8")
                             + "&question=" + URLEncoder.encode(sendMsg, "UTF-8");
 
                     HttpClient httpClient = HttpClientBuilder.create().build();
