@@ -24,11 +24,6 @@ class Region {
      */
     @Column(name = "full_name", nullable = false)
     String fullName;
-    /**
-     * 全拼
-     */
-    @Column(name = "temp", nullable = false)
-    String temp;
 
 
     @ManyToOne
@@ -40,6 +35,6 @@ class Region {
 
 
     @ManyToOne
-    @JoinColumn(name = "region_id")
+    @JoinColumn(name = "parent_id")
     Region parent;
 }

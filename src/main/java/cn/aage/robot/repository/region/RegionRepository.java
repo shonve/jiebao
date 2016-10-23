@@ -12,4 +12,8 @@ import java.util.List;
 public interface RegionRepository extends JpaRepository<Region, Integer>, JpaSpecificationExecutor {
 
     List<Region> findByLevel(int i);
+
+    Region findById(int i);
+
+    List<Region> findByIdGreaterThan(int i);
 }
