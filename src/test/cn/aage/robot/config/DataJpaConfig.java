@@ -1,9 +1,12 @@
 package cn.aage.robot.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,23 +20,20 @@ import java.util.Properties;
  * Created by eric on 2014/10/29.
  */
 @Configuration
-
+@PropertySource("classpath:application.properties")
 @EnableJpaRepositories(basePackages = {"cn.aage.robot.repository"})
 @ComponentScan(basePackages = {"cn.aage.robot.service", "cn.aage.robot.web"})
 public class DataJpaConfig {
-
-    private static final String DRIVER_CLASSNAME = "com.mysql.cj.jdbc.Driver";
-    private static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/robot?characterEncoding=utf8&autoReconnect=true&serverTimezone=GMT&userSSL=false";
-    private static final String DATABASE_USERNAME = "root";
-    private static final String DATABASE_PASSWORD = "root";
+    @Autowired
+    Environment env;
 
     @Bean(destroyMethod = "close", initMethod = "init")
     public DruidDataSource dataSource() {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setDriverClassName(DRIVER_CLASSNAME);
-        druidDataSource.setUrl(DATABASE_URL);
-        druidDataSource.setUsername(DATABASE_USERNAME);
-        druidDataSource.setPassword(DATABASE_PASSWORD);
+        druidDataSource.setDriverClassName(env.getProperty("driverClassName"));
+        druidDataSource.setUrl(env.getProperty("DATABASE_URL"));
+        druidDataSource.setUsername(env.getProperty("DATABASE_USERNAME"));
+        druidDataSource.setPassword(env.getProperty("DATABASE_PASSWORD"));
 
         return druidDataSource;
 
