@@ -17,9 +17,9 @@ import java.io.*;
  */
 public class UFileGetTest {
     public static void main(String args[]) {
-        String bucketName = "shonve.cn-gd.ufileos.com";
+        String bucketName = "shonve";
         String key = "1-0H2154230.gif";
-        String saveAsPath = "D:";
+        String saveAsPath = "D:\\sell\\sa.gif";
         String configPath = "E:\\project\\other\\jiebao\\src\\main\\resources\\config.properties";
 
         //加载配置项
