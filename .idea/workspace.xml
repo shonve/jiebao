@@ -2,76 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ef83691-9c92-4761-b32c-5487cf175a54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_httpclient_commons_httpclient_3_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/DownloadUrl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileResponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/ErrorBody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/FinishMultiBody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/InitMultiBody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/PartBody.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/CancelMultiSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/DeleteSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/FinishMultiSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/GetSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/HeadSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/InitiateMultiSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/OptionsSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/PostSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/PutSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/Sender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadHitSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadPartSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/http/Consts.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/http/entity/ContentType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/http/util/Args.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/http/util/MimeMap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/http/util/TextUtils.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/ufile_sdk.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/DownloadUrl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/UFileClient.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/UFileRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/UFileResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/body/ErrorBody.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/body/FinishMultiBody.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/body/InitMultiBody.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/body/PartBody.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/CancelMultiSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/DeleteSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/FinishMultiSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/GetSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/HeadSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/InitiateMultiSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/OptionsSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/PostSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/PutSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/Sender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/UploadHitSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/UploadPartSender.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/dependencies-1.0.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/ufile_sdk.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jiebao_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jiebao_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jiebao.iml" afterPath="$PROJECT_DIR$/jiebao.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/stream/test/UFilePutFileStreamTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/stream/test/UFilePutFileStreamTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/stream/test/UFilePutStringStreamTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/stream/test/UFilePutStringStreamTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileDeleteTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileDeleteTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileDownloadUrlTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileDownloadUrlTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileGetTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileGetTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileHeadTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileHeadTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileMultiThreadTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileMultiThreadTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileMultiUploadTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileMultiUploadTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileOptionsTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileOptionsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFilePostTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFilePostTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFilePutTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFilePutTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileUploadHitTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileUploadHitTest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_2.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_0_4.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/HmacSHA1.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/HmacSHA1.java" />
     </list>
     <ignored path="jiebao.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -963,7 +894,7 @@
       <workItem from="1477060074763" duration="102151000" />
       <workItem from="1478565981985" duration="5925000" />
       <workItem from="1478587913469" duration="6492000" />
-      <workItem from="1478671646207" duration="1949000" />
+      <workItem from="1478671646207" duration="2216000" />
     </task>
     <task id="LOCAL-00001" summary="优化代码">
       <created>1477024288577</created>
@@ -1105,7 +1036,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478596863836</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="优化">
+      <created>1478673642370</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1478673642370</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1120,7 +1058,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137522000" />
+    <option name="totallyTimeSpent" value="137789000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1344,6 +1282,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="882">
           <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
