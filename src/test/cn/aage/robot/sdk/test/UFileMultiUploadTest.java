@@ -1,10 +1,19 @@
 package cn.aage.robot.sdk.test;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
+import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
+import cn.ucloud.ufile.UFileRequest;
+import cn.ucloud.ufile.UFileResponse;
+import cn.ucloud.ufile.body.FinishMultiBody;
+import cn.ucloud.ufile.body.InitMultiBody;
+import cn.ucloud.ufile.body.PartBody;
+import cn.ucloud.ufile.sender.FinishMultiSender;
+import cn.ucloud.ufile.sender.InitiateMultiSender;
+import cn.ucloud.ufile.sender.UploadPartSender;
+import com.google.gson.Gson;
+import org.apache.http.Header;
+
+import java.io.*;
 import java.util.Collections;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -12,266 +21,250 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.http.Header;
-
-import com.google.gson.Gson;
-
-import cn.ucloud.ufile.body.FinishMultiBody;
-import cn.ucloud.ufile.body.InitMultiBody;
-import cn.ucloud.ufile.body.PartBody;
-import cn.ucloud.ufile.sender.FinishMultiSender;
-import cn.ucloud.ufile.sender.InitiateMultiSender;
-import cn.ucloud.ufile.sender.UploadPartSender;
-import cn.ucloud.ufile.UFileClient;
-import cn.ucloud.ufile.UFileConfig;
-import cn.ucloud.ufile.UFileRequest;
-import cn.ucloud.ufile.UFileResponse;
-
 /**
  * 分片上传测试，包括初始化分片上传、多线程并发上传每个分片、完成分片上传
- * 
- * @author york
  *
+ * @author york
  */
 public class UFileMultiUploadTest {
 
-	public static final int CONCURRENT_COUNT = 3;
+    public static final int CONCURRENT_COUNT = 3;
 
-	public static void main(String args[]) {
-		String bucketName = "";
-		String key = "";
-		String filePath = "";
-		String configPath = "";
-		
-		UFileConfig.getInstance().loadConfig(configPath);
+    public static void main(String args[]) {
+        String bucketName = "";
+        String key = "";
+        String filePath = "";
+        String configPath = "";
 
-		UFileRequest request = new UFileRequest();
-		request.setBucketName(bucketName);
-		request.setKey(key);
-		request.setFilePath(filePath);
+        UFileConfig.getInstance().loadConfig(configPath);
 
-		System.out.println("Multi-Upload Test BEGIN ...");
-		multiUpload(request);
-		System.out.println("Multi-Upload Test END ...\n\n");
-	}
+        UFileRequest request = new UFileRequest();
+        request.setBucketName(bucketName);
+        request.setKey(key);
+        request.setFilePath(filePath);
 
-	private static int calPartCount(String filePath, int partSize) {
-		File file = new File(filePath);
-		int partCount = (int) (file.length() / partSize);
-		if (file.length() % partSize != 0) {
-			partCount++;
-		}
-		return partCount;
-	}
+        System.out.println("Multi-Upload Test BEGIN ...");
+        multiUpload(request);
+        System.out.println("Multi-Upload Test END ...\n\n");
+    }
 
-	private static void multiUpload(UFileRequest request) {
-		UFileClient ufileClient = null;
-		// 初始化分片请求
-		InitMultiBody initMultiBody = null;
-		try {
-			ufileClient = new UFileClient();
-			initMultiBody = initiateMultiUpload(ufileClient, request);
-		} finally {
-			ufileClient.shutdown();
-		}
+    private static int calPartCount(String filePath, int partSize) {
+        File file = new File(filePath);
+        int partCount = (int) (file.length() / partSize);
+        if (file.length() % partSize != 0) {
+            partCount++;
+        }
+        return partCount;
+    }
 
-		if (null == initMultiBody) {
-			System.out.println("failed to initiate the multipart Upload");
-			return;
-		}
+    private static void multiUpload(UFileRequest request) {
+        UFileClient ufileClient = null;
+        // 初始化分片请求
+        InitMultiBody initMultiBody = null;
+        try {
+            ufileClient = new UFileClient();
+            initMultiBody = initiateMultiUpload(ufileClient, request);
+        } finally {
+            ufileClient.shutdown();
+        }
 
-		// 上传各个分片
-		int partSize = initMultiBody.getBlkSize();
-		String uploadId = initMultiBody.getUploadId();
-		int partCount = calPartCount(request.getFilePath(), partSize);
+        if (null == initMultiBody) {
+            System.out.println("failed to initiate the multipart Upload");
+            return;
+        }
 
-		ExecutorService pool = Executors.newFixedThreadPool(CONCURRENT_COUNT);
+        // 上传各个分片
+        int partSize = initMultiBody.getBlkSize();
+        String uploadId = initMultiBody.getUploadId();
+        int partCount = calPartCount(request.getFilePath(), partSize);
 
-		SortedMap<Integer, String> eTags = Collections
-				.synchronizedSortedMap(new TreeMap<Integer, String>());
+        ExecutorService pool = Executors.newFixedThreadPool(CONCURRENT_COUNT);
 
-		File file = new File(request.getFilePath());
-		for (long i = 0; i < partCount; i++) {
-			long start = partSize * i;
-			long curPartSize = partSize < file.length() - start ? partSize
-					: file.length() - start;
+        SortedMap<Integer, String> eTags = Collections
+                .synchronizedSortedMap(new TreeMap<Integer, String>());
 
-			pool.execute(new UploadPartRunnable(request, uploadId, (int)i, partSize
-					* i, curPartSize, eTags));
-		}
+        File file = new File(request.getFilePath());
+        for (long i = 0; i < partCount; i++) {
+            long start = partSize * i;
+            long curPartSize = partSize < file.length() - start ? partSize
+                    : file.length() - start;
 
-		pool.shutdown();
-		while (!pool.isTerminated()) {
-			try {
-				pool.awaitTermination(10, TimeUnit.SECONDS);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
+            pool.execute(new UploadPartRunnable(request, uploadId, (int) i, partSize
+                    * i, curPartSize, eTags));
+        }
 
-		if (eTags.size() != partCount) {
-			throw new IllegalStateException("One or more parts failed");
-		}
+        pool.shutdown();
+        while (!pool.isTerminated()) {
+            try {
+                pool.awaitTermination(10, TimeUnit.SECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
-		// 完成分片上传
-		String newKey = "newly" + request.getKey();
-		ufileClient = null;
-		try {
-			ufileClient = new UFileClient();
-			finishMultiUpload(ufileClient, request, uploadId, eTags, newKey);
-		} finally {
-			ufileClient.shutdown();
-		}
-	}
+        if (eTags.size() != partCount) {
+            throw new IllegalStateException("One or more parts failed");
+        }
 
-	private static void finishMultiUpload(UFileClient ufileClient,
-			UFileRequest request, String uploadId,
-			SortedMap<Integer, String> eTags, String newKey) {
-		FinishMultiSender sender = new FinishMultiSender(uploadId, eTags,
-				newKey);
-		sender.makeAuth(ufileClient, request);
-		UFileResponse finishRes = sender.send(ufileClient, request);
-		if (finishRes != null) {
-			if (finishRes.getStatusLine().getStatusCode() != 200) {
-				if (finishRes.getContent() != null) {
-					ufileClient.closeErrorResponse(finishRes);
-				}
-			} else {
-				InputStream inputStream = finishRes.getContent();
-				Reader reader = new InputStreamReader(inputStream);
-				Gson gson = new Gson();
-				FinishMultiBody body = gson.fromJson(reader,
-						FinishMultiBody.class);
-				String bodyJson = gson.toJson(body);
-				System.out.println(bodyJson);
-				if (inputStream != null) {
-					try {
-						inputStream.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-			}
-		}
-	}
+        // 完成分片上传
+        String newKey = "newly" + request.getKey();
+        ufileClient = null;
+        try {
+            ufileClient = new UFileClient();
+            finishMultiUpload(ufileClient, request, uploadId, eTags, newKey);
+        } finally {
+            ufileClient.shutdown();
+        }
+    }
 
-	private static InitMultiBody initiateMultiUpload(UFileClient ufileClient,
-			UFileRequest request) {
-		InitiateMultiSender init = new InitiateMultiSender();
-		init.makeAuth(ufileClient, request);
-		UFileResponse initRes = init.send(ufileClient, request);
-		if (initRes != null) {
-			System.out.println("status line: " + initRes.getStatusLine());
-			Header[] headers = initRes.getHeaders();
-			for (int i = 0; i < headers.length; i++) {
-				System.out.println("header " + headers[i].getName() + " : "
-						+ headers[i].getValue());
-			}
+    private static void finishMultiUpload(UFileClient ufileClient,
+                                          UFileRequest request, String uploadId,
+                                          SortedMap<Integer, String> eTags, String newKey) {
+        FinishMultiSender sender = new FinishMultiSender(uploadId, eTags,
+                newKey);
+        sender.makeAuth(ufileClient, request);
+        UFileResponse finishRes = sender.send(ufileClient, request);
+        if (finishRes != null) {
+            if (finishRes.getStatusLine().getStatusCode() != 200) {
+                if (finishRes.getContent() != null) {
+                    ufileClient.closeErrorResponse(finishRes);
+                }
+            } else {
+                InputStream inputStream = finishRes.getContent();
+                Reader reader = new InputStreamReader(inputStream);
+                Gson gson = new Gson();
+                FinishMultiBody body = gson.fromJson(reader,
+                        FinishMultiBody.class);
+                String bodyJson = gson.toJson(body);
+                System.out.println(bodyJson);
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
+    }
 
-			if (initRes.getStatusLine().getStatusCode() != 200) {
-				if (initRes.getContent() != null) {
-					ufileClient.closeErrorResponse(initRes);
-				}
-				return null;
-			} else {
-				InputStream inputStream = initRes.getContent();
-				Reader reader = new InputStreamReader(inputStream);
-				Gson gson = new Gson();
-				InitMultiBody body = gson.fromJson(reader, InitMultiBody.class);
-				String bodyJson = gson.toJson(body);
-				System.out.println(bodyJson);
-				if (inputStream != null) {
-					try {
-						inputStream.close();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-				}
-				return body;
-			}
-		}
-		return null;
-	}
+    private static InitMultiBody initiateMultiUpload(UFileClient ufileClient,
+                                                     UFileRequest request) {
+        InitiateMultiSender init = new InitiateMultiSender();
+        init.makeAuth(ufileClient, request);
+        UFileResponse initRes = init.send(ufileClient, request);
+        if (initRes != null) {
+            System.out.println("status line: " + initRes.getStatusLine());
+            Header[] headers = initRes.getHeaders();
+            for (int i = 0; i < headers.length; i++) {
+                System.out.println("header " + headers[i].getName() + " : "
+                        + headers[i].getValue());
+            }
 
-	private static class UploadPartRunnable implements Runnable {
-		private UFileRequest request;
-		private String uploadId;
-		private int partNumber;
-		private long start;
-		private long size;
-		private SortedMap<Integer, String> eTags;
+            if (initRes.getStatusLine().getStatusCode() != 200) {
+                if (initRes.getContent() != null) {
+                    ufileClient.closeErrorResponse(initRes);
+                }
+                return null;
+            } else {
+                InputStream inputStream = initRes.getContent();
+                Reader reader = new InputStreamReader(inputStream);
+                Gson gson = new Gson();
+                InitMultiBody body = gson.fromJson(reader, InitMultiBody.class);
+                String bodyJson = gson.toJson(body);
+                System.out.println(bodyJson);
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+                return body;
+            }
+        }
+        return null;
+    }
 
-		UploadPartRunnable(UFileRequest request, String uploadId,
-				int partNumber, long start, long partSize,
-				SortedMap<Integer, String> eTags) {
-			try {
-				this.request = (UFileRequest) request.clone();
-			} catch (CloneNotSupportedException e) {
-				e.printStackTrace();
-			}
-			this.uploadId = uploadId;
-			this.partNumber = partNumber;
-			this.start = start;
-			this.size = partSize;
-			this.eTags = eTags;
-		}
+    private static class UploadPartRunnable implements Runnable {
+        private UFileRequest request;
+        private String uploadId;
+        private int partNumber;
+        private long start;
+        private long size;
+        private SortedMap<Integer, String> eTags;
 
-		@Override
-		public void run() {
-			UFileClient ufileClient = null;
-			try {
-				ufileClient = new UFileClient();
-				String etag;
-				etag = uploadPart(ufileClient, uploadId, partNumber, start,
-						size);
-				if (etag != null) {
-					eTags.put(partNumber, etag);
-				}
-			} finally {
-				ufileClient.shutdown();
-			}
-		}
+        UploadPartRunnable(UFileRequest request, String uploadId,
+                           int partNumber, long start, long partSize,
+                           SortedMap<Integer, String> eTags) {
+            try {
+                this.request = (UFileRequest) request.clone();
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
+            this.uploadId = uploadId;
+            this.partNumber = partNumber;
+            this.start = start;
+            this.size = partSize;
+            this.eTags = eTags;
+        }
 
-		private String uploadPart(UFileClient ufileClient, String uploadId,
-				int partNumber, long start, long size) {
-			UploadPartSender sender = new UploadPartSender(uploadId,
-					partNumber, start, size);
-			sender.makeAuth(ufileClient, request);
-			UFileResponse partRes = sender.send(ufileClient, request);
+        @Override
+        public void run() {
+            UFileClient ufileClient = null;
+            try {
+                ufileClient = new UFileClient();
+                String etag;
+                etag = uploadPart(ufileClient, uploadId, partNumber, start,
+                        size);
+                if (etag != null) {
+                    eTags.put(partNumber, etag);
+                }
+            } finally {
+                ufileClient.shutdown();
+            }
+        }
 
-			// consume the http response body
-			if (partRes != null) {
-				if (partRes.getStatusLine().getStatusCode() != 200) {
-					if (partRes.getContent() != null) {
-						ufileClient.closeErrorResponse(partRes);
-					}
-					return null;
-				} else {
-					InputStream inputStream = partRes.getContent();
-					Reader reader = new InputStreamReader(inputStream);
-					Gson gson = new Gson();
-					PartBody body = gson.fromJson(reader, PartBody.class);
-					String bodyJson = gson.toJson(body);
-					System.out.println(bodyJson);
-					if (inputStream != null) {
-						try {
-							inputStream.close();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
-					}
-				}
-			}
+        private String uploadPart(UFileClient ufileClient, String uploadId,
+                                  int partNumber, long start, long size) {
+            UploadPartSender sender = new UploadPartSender(uploadId,
+                    partNumber, start, size);
+            sender.makeAuth(ufileClient, request);
+            UFileResponse partRes = sender.send(ufileClient, request);
 
-			// now we only need the head item 'etag'
+            // consume the http response body
+            if (partRes != null) {
+                if (partRes.getStatusLine().getStatusCode() != 200) {
+                    if (partRes.getContent() != null) {
+                        ufileClient.closeErrorResponse(partRes);
+                    }
+                    return null;
+                } else {
+                    InputStream inputStream = partRes.getContent();
+                    Reader reader = new InputStreamReader(inputStream);
+                    Gson gson = new Gson();
+                    PartBody body = gson.fromJson(reader, PartBody.class);
+                    String bodyJson = gson.toJson(body);
+                    System.out.println(bodyJson);
+                    if (inputStream != null) {
+                        try {
+                            inputStream.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
 
-			Header[] headers = partRes.getHeaders();
-			for (int i = 0; i < headers.length; i++) {
-				if ("ETag".equalsIgnoreCase(headers[i].getName())) {
-					return headers[i].getValue();
-				}
-			}
-			return null;
-		}
-	}
+            // now we only need the head item 'etag'
+
+            Header[] headers = partRes.getHeaders();
+            for (int i = 0; i < headers.length; i++) {
+                if ("ETag".equalsIgnoreCase(headers[i].getName())) {
+                    return headers[i].getValue();
+                }
+            }
+            return null;
+        }
+    }
 }
