@@ -62,15 +62,20 @@ class FileData {
     @Column(name = "source_url")
     String sourceUrl;
     /**
-     * 文件CDN路径
+     * 文件cdn路径
      */
-    @Column(name = "CDN_url")
-    String CDNUrl;
+    @Column(name = "cdn_url")
+    String cdnUrl;
     /**
      * 文件类型
      */
-    @Column(name = "MIME_type")
-    String MIMEType;
+    @Column(name = "mime_type")
+    String mimeType;
+    /**
+     * 文件hash值
+     */
+    @Column(name = "hash")
+    String hash;
     /**
      * 文件大小
      */
