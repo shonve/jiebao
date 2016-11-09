@@ -1,38 +1,37 @@
 package cn.ucloud.ufile.body;
 
 public class FinishMultiBody {
-	private String Bucket;
-	private String Key;
-	private String FileSize;
-	
-	public FinishMultiBody() {
-		
-	}
+    private String Bucket;
+    private String Key;
+    private String FileSize;
 
-	public String getBucket() {
-		return Bucket;
-	}
+    public FinishMultiBody() {
 
-	public void setBucket(String bucket) {
-		Bucket = bucket;
-	}
+    }
 
-	public String getKey() {
-		return Key;
-	}
+    public String getBucket() {
+        return Bucket;
+    }
 
-	public void setKey(String key) {
-		Key = key;
-	}
+    public void setBucket(String bucket) {
+        Bucket = bucket;
+    }
 
-	public String getFileSize() {
-		return FileSize;
-	}
+    public String getKey() {
+        return Key;
+    }
 
-	public void setFileSize(String fileSize) {
-		FileSize = fileSize;
-	}
-	
-	
+    public void setKey(String key) {
+        Key = key;
+    }
+
+    public String getFileSize() {
+        return FileSize;
+    }
+
+    public void setFileSize(String fileSize) {
+        FileSize = fileSize;
+    }
+
 
 }

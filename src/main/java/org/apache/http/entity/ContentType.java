@@ -27,17 +27,7 @@
 
 package org.apache.http.entity;
 
-import java.io.Serializable;
-import java.nio.charset.Charset;
-import java.nio.charset.UnsupportedCharsetException;
-import java.util.Locale;
-
-import org.apache.http.Consts;
-import org.apache.http.Header;
-import org.apache.http.HeaderElement;
-import org.apache.http.HttpEntity;
-import org.apache.http.NameValuePair;
-import org.apache.http.ParseException;
+import org.apache.http.*;
 import org.apache.http.annotation.Immutable;
 import org.apache.http.message.BasicHeaderValueFormatter;
 import org.apache.http.message.BasicHeaderValueParser;
@@ -45,6 +35,11 @@ import org.apache.http.message.ParserCursor;
 import org.apache.http.util.Args;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.TextUtils;
+
+import java.io.Serializable;
+import java.nio.charset.Charset;
+import java.nio.charset.UnsupportedCharsetException;
+import java.util.Locale;
 
 /**
  * Content type information consisting of a MIME type and an optional charset.
@@ -127,7 +122,7 @@ public final class ContentType implements Serializable {
         if (this.params == null) {
             return null;
         }
-        for (final NameValuePair param: this.params) {
+        for (final NameValuePair param : this.params) {
             if (param.getName().equalsIgnoreCase(name)) {
                 return param.getValue();
             }
@@ -167,8 +162,8 @@ public final class ContentType implements Serializable {
      * Creates a new instance of {@link ContentType}.
      *
      * @param mimeType MIME type. It may not be <code>null</code> or empty. It may not contain
-     *        characters <">, <;>, <,> reserved by the HTTP specification.
-     * @param charset charset.
+     *                 characters <">, <;>, <,> reserved by the HTTP specification.
+     * @param charset  charset.
      * @return content type
      */
     public static ContentType create(final String mimeType, final Charset charset) {
@@ -181,7 +176,7 @@ public final class ContentType implements Serializable {
      * Creates a new instance of {@link ContentType} without a charset.
      *
      * @param mimeType MIME type. It may not be <code>null</code> or empty. It may not contain
-     *        characters <">, <;>, <,> reserved by the HTTP specification.
+     *                 characters <">, <;>, <,> reserved by the HTTP specification.
      * @return content type
      */
     public static ContentType create(final String mimeType) {
@@ -192,12 +187,12 @@ public final class ContentType implements Serializable {
      * Creates a new instance of {@link ContentType}.
      *
      * @param mimeType MIME type. It may not be <code>null</code> or empty. It may not contain
-     *        characters <">, <;>, <,> reserved by the HTTP specification.
-     * @param charset charset. It may not contain characters <">, <;>, <,> reserved by the HTTP
-     *        specification. This parameter is optional.
+     *                 characters <">, <;>, <,> reserved by the HTTP specification.
+     * @param charset  charset. It may not contain characters <">, <;>, <,> reserved by the HTTP
+     *                 specification. This parameter is optional.
      * @return content type
      * @throws UnsupportedCharsetException Thrown when the named charset is not available in
-     * this instance of the Java virtual machine
+     *                                     this instance of the Java virtual machine
      */
     public static ContentType create(
             final String mimeType, final String charset) throws UnsupportedCharsetException {
@@ -215,10 +210,10 @@ public final class ContentType implements Serializable {
      *
      * @param s text
      * @return content type
-     * @throws ParseException if the given text does not represent a valid
-     * <code>Content-Type</code> value.
+     * @throws ParseException              if the given text does not represent a valid
+     *                                     <code>Content-Type</code> value.
      * @throws UnsupportedCharsetException Thrown when the named charset is not available in
-     * this instance of the Java virtual machine
+     *                                     this instance of the Java virtual machine
      */
     public static ContentType parse(
             final String s) throws ParseException, UnsupportedCharsetException {
@@ -241,10 +236,10 @@ public final class ContentType implements Serializable {
      *
      * @param entity HTTP entity
      * @return content type
-     * @throws ParseException if the given text does not represent a valid
-     * <code>Content-Type</code> value.
+     * @throws ParseException              if the given text does not represent a valid
+     *                                     <code>Content-Type</code> value.
      * @throws UnsupportedCharsetException Thrown when the named charset is not available in
-     * this instance of the Java virtual machine
+     *                                     this instance of the Java virtual machine
      */
     public static ContentType get(
             final HttpEntity entity) throws ParseException, UnsupportedCharsetException {
@@ -267,10 +262,10 @@ public final class ContentType implements Serializable {
      *
      * @param entity HTTP entity
      * @return content type
-     * @throws ParseException if the given text does not represent a valid
-     * <code>Content-Type</code> value.
+     * @throws ParseException              if the given text does not represent a valid
+     *                                     <code>Content-Type</code> value.
      * @throws UnsupportedCharsetException Thrown when the named charset is not available in
-     * this instance of the Java virtual machine
+     *                                     this instance of the Java virtual machine
      */
     public static ContentType getOrDefault(
             final HttpEntity entity) throws ParseException, UnsupportedCharsetException {
@@ -295,7 +290,7 @@ public final class ContentType implements Serializable {
      * @param charset name
      * @return a new instance with this MIME type and the given Charset name.
      * @throws UnsupportedCharsetException Thrown when the named charset is not available in
-     * this instance of the Java virtual machine
+     *                                     this instance of the Java virtual machine
      * @since 4.3
      */
     public ContentType withCharset(final String charset) {

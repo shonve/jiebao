@@ -3,6 +3,39 @@
   <component name="ChangeListManager">
     <list default="true" id="6ef83691-9c92-4761-b32c-5487cf175a54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/model/ApiCategory.groovy" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/model/ApiCategory.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/model/region/Country.groovy" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/model/region/Country.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/model/region/Province.groovy" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/model/region/Province.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/repository/ApiInterfaceRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/repository/ApiInterfaceRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/repository/cook/CookBookRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/repository/cook/CookBookRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/repository/cook/CookStepRepository.java" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/repository/cook/CookStepRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/web/CookController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/web/CookController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/web/RegionController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/web/RegionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/DownloadUrl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/DownloadUrl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/HmacSHA1.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/HmacSHA1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileClient.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileConfig.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileRequest.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileRequest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileResponse.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileResponse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/ErrorBody.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/ErrorBody.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/FinishMultiBody.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/FinishMultiBody.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/InitMultiBody.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/InitMultiBody.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/PartBody.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/body/PartBody.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/CancelMultiSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/CancelMultiSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/DeleteSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/DeleteSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/FinishMultiSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/FinishMultiSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/GetSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/GetSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/HeadSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/HeadSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/InitiateMultiSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/InitiateMultiSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/OptionsSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/OptionsSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/PostSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/PostSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/PutSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/PutSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/Sender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/Sender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadHitSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadHitSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadPartSender.java" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadPartSender.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/http/entity/ContentType.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/http/entity/ContentType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/apache/http/util/MimeMap.java" afterPath="$PROJECT_DIR$/src/main/java/org/apache/http/util/MimeMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java" />
     </list>
     <ignored path="jiebao.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,8 +91,10 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadHitSender.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
-              <caret line="180" column="32" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
-              <folding />
+              <caret line="175" column="32" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,7 +104,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,35 +114,22 @@
       <file leaf-file-name="UFileClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+            <state relative-caret-position="347">
+              <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2222#2223#0" expanded="true" />
-                <element signature="e#2273#2274#0" expanded="true" />
+                <element signature="e#2576#2577#0" expanded="true" />
+                <element signature="e#2636#2637#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UFileGetTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileGetTest.java">
+      <file leaf-file-name="UFileCancelMultiTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="43" column="24" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+            <state relative-caret-position="130">
+              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SSLClient.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/aage/robot/util/SSLClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -133,6 +157,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="shonve" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -190,10 +219,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/passport-async.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/jquery.mousewheel.min.js" />
         <option value="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/stream/test/UFilePutFileStreamTest.java" />
-        <option value="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/aage/robot/ucloud/sender/UploadHitSender.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadHitSender.java" />
+        <option value="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java" />
       </list>
     </option>
   </component>
@@ -264,6 +293,82 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jiebao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -894,7 +999,7 @@
       <workItem from="1477060074763" duration="102151000" />
       <workItem from="1478565981985" duration="5925000" />
       <workItem from="1478587913469" duration="6492000" />
-      <workItem from="1478671646207" duration="2216000" />
+      <workItem from="1478671646207" duration="2488000" />
     </task>
     <task id="LOCAL-00001" summary="优化代码">
       <created>1477024288577</created>
@@ -1043,7 +1148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478673642370</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="优化">
+      <created>1478673878408</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1478673878408</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1058,7 +1170,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137789000" />
+    <option name="totallyTimeSpent" value="138061000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1232,6 +1344,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,6 +1352,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1298,6 +1412,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1437,14 +1552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/cn/aage/robot/sdk/stream/test/UFilePutFileStreamTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3087">
@@ -1552,8 +1659,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/UploadHitSender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="180" column="32" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
-          <folding />
+          <caret line="175" column="32" selection-start-line="175" selection-start-column="32" selection-end-line="175" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1561,18 +1670,18 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/aage/robot/util/SSLClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="84" column="21" selection-start-line="84" selection-start-column="21" selection-end-line="84" selection-end-column="21" />
+        <state relative-caret-position="63">
+          <caret line="21" column="67" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2222#2223#0" expanded="true" />
-            <element signature="e#2273#2274#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1585,13 +1694,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/aage/robot/util/SSLClient.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/UFileClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="347">
+          <caret line="82" column="19" selection-start-line="82" selection-start-column="19" selection-end-line="82" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2576#2577#0" expanded="true" />
+            <element signature="e#2636#2637#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileCancelMultiTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

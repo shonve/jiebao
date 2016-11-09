@@ -1,26 +1,26 @@
 package cn.ucloud.ufile.body;
 
 public class ErrorBody {
-	private int RetCode;
-	private String ErrMsg;
-	
-	public ErrorBody() {
-		
-	}
+    private int RetCode;
+    private String ErrMsg;
 
-	public int getRetCode() {
-		return RetCode;
-	}
+    public ErrorBody() {
 
-	public void setRetCode(int retCode) {
-		RetCode = retCode;
-	}
+    }
 
-	public String getErrMsg() {
-		return ErrMsg;
-	}
+    public int getRetCode() {
+        return RetCode;
+    }
 
-	public void setErrMsg(String errMsg) {
-		ErrMsg = errMsg;
-	}
+    public void setRetCode(int retCode) {
+        RetCode = retCode;
+    }
+
+    public String getErrMsg() {
+        return ErrMsg;
+    }
+
+    public void setErrMsg(String errMsg) {
+        ErrMsg = errMsg;
+    }
 }

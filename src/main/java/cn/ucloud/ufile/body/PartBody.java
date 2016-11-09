@@ -1,17 +1,17 @@
 package cn.ucloud.ufile.body;
 
 public class PartBody {
-	private int PartNumber;
-	
-	public PartBody() {
-		
-	}
+    private int PartNumber;
 
-	public int getPartNumber() {
-		return PartNumber;
-	}
+    public PartBody() {
 
-	public void setPartNumber(int partNumber) {
-		PartNumber = partNumber;
-	}
+    }
+
+    public int getPartNumber() {
+        return PartNumber;
+    }
+
+    public void setPartNumber(int partNumber) {
+        PartNumber = partNumber;
+    }
 }

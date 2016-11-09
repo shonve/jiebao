@@ -1,7 +1,6 @@
 package cn.aage.robot.repository;
 
 import cn.aage.robot.model.ApiInterface;
-import cn.aage.robot.model.Md5;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
