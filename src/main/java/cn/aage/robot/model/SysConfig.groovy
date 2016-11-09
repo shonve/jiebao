@@ -6,8 +6,8 @@ import javax.persistence.*
  * Created by shonve on 2016/10/21.
  */
 @Entity
-@Table(name = "qq_config")
-class QQConfig {
+@Table(name = "sys_config")
+class SysConfig {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -26,10 +26,15 @@ class QQConfig {
     String configName;
 
     /**
-     * 群名字
+     * 配置值
      */
     @Column(name = "config_value", nullable = false)
     String configValue;
+    /**
+     * 备注
+     */
+    @Column(name = "remark", nullable = false)
+    String remark;
 
 
 }

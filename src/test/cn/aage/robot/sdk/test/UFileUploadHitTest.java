@@ -20,10 +20,10 @@ import java.io.InputStreamReader;
  */
 public class UFileUploadHitTest {
     public static void main(String args[]) {
-        String bucketName = "";
+        String bucketName = "shonve.cn-gd.ufileos.com";
         String key = "";
         String filePath = "";
-        String configPath = "";
+        String configPath = "E:\\project\\other\\jiebao\\src\\main\\config.properties";
 
         //加载配置项
         UFileConfig.getInstance().loadConfig(configPath);
