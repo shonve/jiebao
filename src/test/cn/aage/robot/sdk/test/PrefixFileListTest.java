@@ -6,6 +6,7 @@ import cn.ucloud.ufile.UFileRequest;
 import cn.ucloud.ufile.UFileResponse;
 import cn.ucloud.ufile.sender.DeleteSender;
 import cn.ucloud.ufile.sender.GetSender;
+import cn.ucloud.ufile.sender.PrefixSender;
 import org.apache.http.Header;
 
 import java.io.BufferedReader;
@@ -29,7 +30,7 @@ public class PrefixFileListTest {
 
         UFileRequest request = new UFileRequest();
         request.setBucketName(bucketName);
-        request.setKey("?list&prefix=&marker=&limit=20");
+        request.setKey("");
 
         UFileClient ufileClient = null;
         try {
@@ -42,7 +43,7 @@ public class PrefixFileListTest {
 
     private static void getFile(UFileClient ufileClient, UFileRequest request) {
 
-        GetSender sender = new GetSender();
+        PrefixSender sender = new PrefixSender();
         sender.makeAuth(ufileClient, request);
 
         UFileResponse response = sender.send(ufileClient, request);

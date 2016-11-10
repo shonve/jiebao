@@ -19,10 +19,10 @@ import java.io.InputStreamReader;
  */
 public class UFileHeadTest {
     public static void main(String args[]) {
-        String bucketName = "";
-        String key = "";
+        String bucketName = "shonve";
+        String key = "1-0H2154230.gif";
         String saveAsPath = "";
-        String configPath = "";
+        String configPath = "E:\\project\\other\\jiebao\\src\\main\\resources\\config.properties";
 
         //加载配置项
         UFileConfig.getInstance().loadConfig(configPath);

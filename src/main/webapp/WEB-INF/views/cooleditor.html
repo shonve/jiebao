@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>很酷的代码开发工具-bejson</title>
+    <link rel="stylesheet" th:href="@{/static/plugin/codemirror/lib/codemirror.css}"
+          href="/static/plugin/codemirror/lib/codemirror.css" type="text/css">
+    <link rel="stylesheet" th:href="@{/static/plugin/codemirror/theme/monokai.css}"
+          href="/static/plugin/codemirror/theme/monokai.css" type="text/css">
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #222;
+        }
+
+        /* Codemirror */
+        .Codemirror {
+            width: 100%;
+            height: 100%;
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<script th:src="@{/static/plugin/codemirror/lib/codemirror.js}"
+        src="/static/plugin/codemirror/lib/codemirror.js"></script>
+<script th:src="@{/static/plugin/codemirror/addon/edit/closetag.js}"
+        src="/static/plugin/codemirror/addon/edit/closetag.js"></script>
+<script th:src="@{/static/plugin/codemirror/mode/xml/xml.js}"
+        src="/static/plugin/codemirror/mode/xml/xml.js"></script>
+<script th:src="@{/static/plugin/codemirror/mode/javascript/javascript.js}"
+        src="/static/plugin/codemirror/mode/javascript/javascript.js"></script>
+<script th:src="@{/static/plugin/codemirror/mode/css/css.js}"
+        src="/static/plugin/codemirror/mode/css/css.js"></script>
+<script th:src="@{/static/plugin/codemirror/mode/htmlmixed/htmlmixed.js}"
+        src="/static/plugin/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script th:src="@{/static/plugin/codemirror/code-blast.js}"
+        src="/static/plugin/codemirror/code-blast.js"></script>
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    window.cm = CodeMirror(document.body, {
+        lineNumbers: true,
+        mode: "htmlmixed",
+        theme: 'monokai',
+        lineWrapping: true,
+        autofocus: true,
+        tabSize: 2,
+        value: "<article>\n  <h1>Hello Bejson</h1>\n</article>",
+        autoCloseTags: true,
+
+    });
+
+    function viewPage() {
+        html = "";
+        html = $(".CodeMirror-code").text();
+        alert(html);
+        view = window.open("", "view")
+        view.document.open()
+        view.document.write(html) // value of text area
+        view.document.write("<BR>") // solves a bug
+        view.document.close()
+    }
+
+</script>
+</body>
+</html>

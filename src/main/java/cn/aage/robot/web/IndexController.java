@@ -17,4 +17,9 @@ public class IndexController {
         return "index";
 
     }
+    @RequestMapping(value = "/cooleditor", method = {RequestMethod.POST, RequestMethod.GET})
+    public String cooleditor(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
+        return "cooleditor";
+
+    }
 }
