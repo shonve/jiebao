@@ -24,7 +24,6 @@ public class CookController {
         String name = request.getParameter("name");
         name = new String(name.getBytes("ISO-8859-1"), "UTF-8");
         cookService.saveCook(name, 0);
-
     }
 
     @RequestMapping(value = "/label", method = {RequestMethod.POST, RequestMethod.GET})
