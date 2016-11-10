@@ -1,6 +1,7 @@
 package cn.aage.robot.sdk.stream.test;
 
 import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
 import cn.ucloud.ufile.UFileRequest;
 import cn.ucloud.ufile.UFileResponse;
 import cn.ucloud.ufile.sender.GetSender;
@@ -16,9 +17,12 @@ import java.io.*;
  */
 public class UFilePutStringStreamTest {
     public static void main(String args[]) {
-        String bucketName = "red-horse";
-        String key = "put-string-stream-test";
-        String saveAsPath = "/Users/york/ucloud-dl.txt";
+        String bucketName = "";
+        String key = "";
+        String saveAsPath = "";
+        String configPath = "";
+
+        UFileConfig.getInstance().loadConfig(configPath);
 
         UFileRequest request = new UFileRequest();
         request.setBucketName(bucketName);
@@ -31,15 +35,10 @@ public class UFilePutStringStreamTest {
 
         request.addHeader("Content-Type", "text/plain");
 
-        //add some canonical headers as you need, which is not necessary
-        request.addHeader("X-UCloud-World", "world");
-        request.addHeader("X-UCloud-Hello", "hello");
-
         UFileClient ufileClient = null;
         System.out.println("PutStringStream BEGIN ...");
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath("/Users/york/config.properties");
             putFile(ufileClient, request);
         } finally {
             ufileClient.shutdown();
@@ -49,7 +48,6 @@ public class UFilePutStringStreamTest {
         System.out.println("GetFile BEGIN...");
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath("/Users/york/config.properties");
             getFile(ufileClient, request, saveAsPath);
         } finally {
             ufileClient.shutdown();

@@ -2,6 +2,7 @@ package cn.aage.robot.sdk.test;
 
 
 import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
 import cn.ucloud.ufile.UFileRequest;
 import cn.ucloud.ufile.UFileResponse;
 import cn.ucloud.ufile.sender.GetSender;
@@ -17,29 +18,23 @@ import java.io.*;
  */
 public class UFilePostTest {
     public static void main(String args[]) {
-        String bucketName = "red-horse";
-        /**
-         *  UFileSDK借助Apache HTTP Client的第三方Jar包，Post接口不支持含非UTF-8字符的key参数。
-         *  如果key中必须使用非UTF-8字符，如中文等，请改用Put接口或者分片上传接口
-         */
-        String key = "";  //only support name with UTF-8 characters
+        String bucketName = "";
+        String key = "";
         String filePath = "";
         String saveAsPath = "";
         String configPath = "";
+
+        UFileConfig.getInstance().loadConfig(configPath);
 
         UFileRequest request = new UFileRequest();
         request.setBucketName(bucketName);
         request.setKey(key);
         request.setFilePath(filePath);
 
-        //add some canonical headers as you need, which is optional
-        request.addHeader("X-UCloud-World", "world");
-        request.addHeader("X-UCloud-Hello", "hello");
         UFileClient ufileClient = null;
         System.out.println("PostFile BEGIN ...");
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath(configPath);
             postFile(ufileClient, request);
         } finally {
             ufileClient.shutdown();
@@ -49,7 +44,6 @@ public class UFilePostTest {
         System.out.println("GetFile BEGIN...");
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath(configPath);
             getFile(ufileClient, request, saveAsPath);
         } finally {
             ufileClient.shutdown();

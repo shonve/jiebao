@@ -2,6 +2,7 @@ package cn.aage.robot.sdk.test;
 
 import cn.ucloud.ufile.DownloadUrl;
 import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
 import cn.ucloud.ufile.UFileRequest;
 
 import java.io.*;
@@ -14,9 +15,13 @@ import java.net.URL;
  */
 public class UFileDownloadUrlTest {
     public static void main(String args[]) {
-        String bucketName = "shonve";
-        String key = "1-0H2154230.gif";
-        String saveAsPath = "D:/ee.gif";
+        String bucketName = "";
+        String key = "";
+        String saveAsPath = "";
+        String configPath = "";
+
+        //加载配置项
+        UFileConfig.getInstance().loadConfig(configPath);
 
         UFileRequest request = new UFileRequest();
         request.setBucketName(bucketName);
@@ -28,8 +33,6 @@ public class UFileDownloadUrlTest {
 
         boolean isPrivate = true;
         UFileClient ufileClient = new UFileClient();
-        ufileClient.setConfigPath("");
-        ufileClient.loadConfig();
         int ttl = 86400;
         /*
 		 * 针对私有的Bucket，为了防止盗链，建议生成的链接的有效期为ttl > 0; 如果 ttl == 0, 那么生成的链接永久有效

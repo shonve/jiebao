@@ -2,6 +2,7 @@ package cn.aage.robot.sdk.test;
 
 
 import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
 import cn.ucloud.ufile.UFileRequest;
 import cn.ucloud.ufile.UFileResponse;
 import cn.ucloud.ufile.sender.UploadHitSender;
@@ -19,26 +20,23 @@ import java.io.InputStreamReader;
  */
 public class UFileUploadHitTest {
     public static void main(String args[]) {
-        String bucketName = "";
+        String bucketName = "shonve.cn-gd.ufileos.com";
         String key = "";
         String filePath = "";
-        String configPath = "";
+        String configPath = "E:\\project\\other\\jiebao\\src\\main\\config.properties";
+
+        //加载配置项
+        UFileConfig.getInstance().loadConfig(configPath);
 
         UFileRequest request = new UFileRequest();
         request.setBucketName(bucketName);
         request.setKey(key);
         request.setFilePath(filePath);
 
-        //request.addHeader("Content-Type", "application/octet-stream");
-        //add some canonical headers as you need, which is optional
-        request.addHeader("X-UCloud-World", "world");
-        request.addHeader("X-UCloud-Hello", "hello");
-
         System.out.println("UploadHit Test BEGIN ...");
         UFileClient ufileClient = null;
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath(configPath);
             uploadHit(ufileClient, request);
         } finally {
             ufileClient.shutdown();

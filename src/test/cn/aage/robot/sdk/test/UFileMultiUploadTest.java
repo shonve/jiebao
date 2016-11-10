@@ -1,6 +1,7 @@
 package cn.aage.robot.sdk.test;
 
 import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
 import cn.ucloud.ufile.UFileRequest;
 import cn.ucloud.ufile.UFileResponse;
 import cn.ucloud.ufile.body.FinishMultiBody;
@@ -30,20 +31,17 @@ public class UFileMultiUploadTest {
     public static final int CONCURRENT_COUNT = 3;
 
     public static void main(String args[]) {
-
         String bucketName = "";
         String key = "";
         String filePath = "";
+        String configPath = "";
+
+        UFileConfig.getInstance().loadConfig(configPath);
 
         UFileRequest request = new UFileRequest();
         request.setBucketName(bucketName);
         request.setKey(key);
         request.setFilePath(filePath);
-
-        // request.addHeader("Content-Type", "application/octet-stream");
-        // add some canonical headers as you need, which is optional
-        request.addHeader("X-UCloud-World", "world");
-        request.addHeader("X-UCloud-Hello", "hello");
 
         System.out.println("Multi-Upload Test BEGIN ...");
         multiUpload(request);
@@ -65,7 +63,6 @@ public class UFileMultiUploadTest {
         InitMultiBody initMultiBody = null;
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath("");
             initMultiBody = initiateMultiUpload(ufileClient, request);
         } finally {
             ufileClient.shutdown();
@@ -114,7 +111,6 @@ public class UFileMultiUploadTest {
         ufileClient = null;
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath("");
             finishMultiUpload(ufileClient, request, uploadId, eTags, newKey);
         } finally {
             ufileClient.shutdown();
@@ -218,7 +214,6 @@ public class UFileMultiUploadTest {
             UFileClient ufileClient = null;
             try {
                 ufileClient = new UFileClient();
-                ufileClient.setConfigPath("");
                 String etag;
                 etag = uploadPart(ufileClient, uploadId, partNumber, start,
                         size);
@@ -265,7 +260,7 @@ public class UFileMultiUploadTest {
 
             Header[] headers = partRes.getHeaders();
             for (int i = 0; i < headers.length; i++) {
-                if ("ETag".equals(headers[i].getName())) {
+                if ("ETag".equalsIgnoreCase(headers[i].getName())) {
                     return headers[i].getValue();
                 }
             }

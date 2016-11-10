@@ -1,11 +1,9 @@
 package cn.aage.robot.model.region
 
 import javax.persistence.Column
-import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
-import javax.persistence.Table
 
 /**
  * Created by shonve on 2016/10/23.

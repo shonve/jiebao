@@ -2,6 +2,7 @@ package cn.aage.robot.sdk.test;
 
 
 import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
 import cn.ucloud.ufile.UFileRequest;
 import cn.ucloud.ufile.UFileResponse;
 import cn.ucloud.ufile.sender.GetSender;
@@ -16,23 +17,21 @@ import java.io.*;
  */
 public class UFileGetTest {
     public static void main(String args[]) {
-        String bucketName = "";
-        String key = "";
-        String saveAsPath = "";
+        String bucketName = "shonve";
+        String key = "1-0H2154230.gif";
+        String saveAsPath = "D:\\sell\\sa.gif";
+        String configPath = "E:\\project\\other\\jiebao\\src\\main\\resources\\config.properties";
+
+        //加载配置项
+        UFileConfig.getInstance().loadConfig(configPath);
 
         UFileRequest request = new UFileRequest();
         request.setBucketName(bucketName);
         request.setKey(key);
 
-        //add some canonical headers as you need, which is optional
-        request.addHeader("X-UCloud-World", "world");
-        request.addHeader("X-UCloud-Hello", "hello");
-
         UFileClient ufileClient = null;
-
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath("");
             getFile(ufileClient, request, saveAsPath);
         } finally {
             ufileClient.shutdown();

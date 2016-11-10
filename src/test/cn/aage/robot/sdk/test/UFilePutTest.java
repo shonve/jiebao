@@ -1,6 +1,7 @@
 package cn.aage.robot.sdk.test;
 
 import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
 import cn.ucloud.ufile.UFileRequest;
 import cn.ucloud.ufile.UFileResponse;
 import cn.ucloud.ufile.sender.DeleteSender;
@@ -23,51 +24,42 @@ public class UFilePutTest {
         String saveAsPath = "";
         String configPath = "";
 
+        //加载配置项
+        //UFileConfig.getInstance().loadConfig(configPath);
+
+        //或者逐个设置配置项
+        UFileConfig.getInstance().setUcloudPublicKey("");
+        UFileConfig.getInstance().setUcloudPrivateKey("");
+        UFileConfig.getInstance().setProxySuffix("");
+        UFileConfig.getInstance().setDownloadProxySuffix("");
+
         UFileRequest request = new UFileRequest();
         request.setBucketName(bucketName);
         request.setKey(key);
         request.setFilePath(filePath);
 
-        //add some canonical headers as you need, which is optional
-        request.addHeader("X-UCloud-World", "world");
-        request.addHeader("X-UCloud-Hello", "hello");
-
         UFileClient ufileClient = null;
-
 /*
  *     一个请求，使用一个UFileClient，亦即使用一个HTTPclient，发送请求，收到响应，关闭连接
  */
         System.out.println("PutFile BEGIN ...");
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath(configPath);
             putFile(ufileClient, request);
         } finally {
             ufileClient.shutdown();
         }
         System.out.println("PutFile END ...\n\n");
 
+
         System.out.println("GetFile BEGIN...");
         try {
             ufileClient = new UFileClient();
-            ufileClient.setConfigPath(configPath);
             getFile(ufileClient, request, saveAsPath);
         } finally {
             ufileClient.shutdown();
         }
         System.out.println("GetFile END ...\n\n");
-
-
-        System.out.println("DeleteFile BEGIN ...");
-        try {
-            ufileClient = new UFileClient();
-            ufileClient.setConfigPath(configPath);
-            deleteFile(ufileClient, request);
-        } finally {
-            ufileClient.shutdown();
-        }
-        System.out.println("DeleteFile END ...\n\n");
-
     }
 
     private static void putFile(UFileClient ufileClient, UFileRequest request) {

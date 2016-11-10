@@ -2,10 +2,10 @@ package cn.aage.robot.service;
 
 import cn.aage.robot.model.ApiInterface;
 import cn.aage.robot.model.Message;
-import cn.aage.robot.model.QQConfig;
+import cn.aage.robot.model.SysConfig;
 import cn.aage.robot.repository.ApiInterfaceRepository;
 import cn.aage.robot.repository.MessageRepository;
-import cn.aage.robot.repository.QQConfigRepository;
+import cn.aage.robot.repository.SysConfigRepository;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -29,7 +29,7 @@ public class RobotService {
     private static final Logger LOGGER = Logger.getLogger(RobotService.class.getName());
 
     @Autowired
-    private QQConfigRepository qqConfigRepository;
+    private SysConfigRepository sysConfigRepository;
     @Autowired
     private ApiInterfaceRepository apiInterfaceRepository;
     @Autowired
@@ -47,7 +47,7 @@ public class RobotService {
         }
 
 
-        QQConfig config = qqConfigRepository.findByConfigName("enabled_robot");
+        SysConfig config = sysConfigRepository.findByConfigName("enabled_robot");
 
         if (null != config) {
             ApiInterface api = apiInterfaceRepository.findByCode(config.getConfigValue());

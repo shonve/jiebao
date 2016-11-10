@@ -1,6 +1,7 @@
 package cn.aage.robot.sdk.test;
 
 import cn.ucloud.ufile.UFileClient;
+import cn.ucloud.ufile.UFileConfig;
 import cn.ucloud.ufile.UFileRequest;
 import cn.ucloud.ufile.UFileResponse;
 import cn.ucloud.ufile.sender.PutSender;
@@ -21,6 +22,11 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class UFileMultiThreadTest {
     public static void main(String args[]) throws ExecutionException, InterruptedException {
+        String bucketName = "";
+        String configPath = "";
+        //加载配置项
+        UFileConfig.getInstance().loadConfig(configPath);
+
         // specify your concurrency
         int concurrency = 3;
         // total count in each thread
@@ -35,7 +41,6 @@ public class UFileMultiThreadTest {
 
         LinkedList<Future> futures = new LinkedList<Future>();
         for (int i = 0; i < concurrency; ++i) {
-            String bucketName = "";
             String key = String.format("m-test %d", i);
             String filePath = String.format("/Users/york/java-sdk-test/m-test-%d", i);
             PutFileRunner putFileRunner = new PutFileRunner(
@@ -87,8 +92,6 @@ public class UFileMultiThreadTest {
 
             for (int i = 0; i < count; i++) {
                 UFileClient ufileClient = new UFileClient();
-                ufileClient.setConfigPath("");
-
                 UFileRequest request = new UFileRequest();
                 request.setBucketName(bucket);
                 request.setKey(key);
