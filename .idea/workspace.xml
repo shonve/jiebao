@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ef83691-9c92-4761-b32c-5487cf175a54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/PrefixSender.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cooleditor.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/addon/edit/closetag.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/code-blast.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/lib/codemirror.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/lib/codemirror.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/mode/css/css.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/mode/htmlmixed/htmlmixed.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/mode/javascript/javascript.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/mode/xml/xml.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/plugin/codemirror/theme/monokai.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/aage/robot/web/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/aage/robot/web/IndexController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/PrefixFileListTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/PrefixFileListTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileHeadTest.java" afterPath="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileHeadTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cooleditor.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cooleditor.html" />
     </list>
     <ignored path="jiebao.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,38 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="91" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#8264#8270#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cooleditor.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cooleditor.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cooleditor.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+            <state relative-caret-position="298">
+              <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IndexController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cn/aage/robot/web/IndexController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+            <state relative-caret-position="108">
+              <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -152,8 +122,8 @@
         <option value="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/PrefixFileListTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/ucloud/ufile/sender/PrefixSender.java" />
         <option value="$PROJECT_DIR$/src/test/cn/aage/robot/sdk/test/UFileHeadTest.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cooleditor.html" />
         <option value="$PROJECT_DIR$/src/main/java/cn/aage/robot/web/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cooleditor.html" />
       </list>
     </option>
   </component>
@@ -1496,7 +1466,7 @@
       <workItem from="1477060074763" duration="102151000" />
       <workItem from="1478565981985" duration="5925000" />
       <workItem from="1478587913469" duration="6492000" />
-      <workItem from="1478671646207" duration="18835000" />
+      <workItem from="1478671646207" duration="19921000" />
     </task>
     <task id="LOCAL-00001" summary="优化代码">
       <created>1477024288577</created>
@@ -1701,7 +1671,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478686831395</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="增加在线编辑器">
+      <created>1478742386712</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1478742386712</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1728,7 +1705,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154408000" />
+    <option name="totallyTimeSpent" value="155494000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1850,7 +1827,8 @@
     <MESSAGE value="增加Api收藏数据表" />
     <MESSAGE value="优化" />
     <MESSAGE value="增加文件实体" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加文件实体" />
+    <MESSAGE value="增加在线编辑器" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加在线编辑器" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2253,10 +2231,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/aage/robot/web/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="298" column="0" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="91" />
+        <state relative-caret-position="554">
+          <caret line="244" column="40" selection-start-line="244" selection-start-column="40" selection-end-line="244" selection-end-column="40" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -2270,16 +2256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cooleditor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/aage/robot/web/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+        <state relative-caret-position="298">
+          <caret line="47" column="24" selection-start-line="47" selection-start-column="24" selection-end-line="47" selection-end-column="24" />
           <folding />
         </state>
       </provider>
