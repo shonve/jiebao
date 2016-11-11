@@ -6,5 +6,27 @@
 </head>
 <body>
 啊啊啊啊
+<img src="" id="ccc"/>
+<input type="button" value="点击" onclick="cc()"/>
+<script type="text/javascript">
+    function cc(){
+        $.ajax({
+            type: "GET",
+            url: "/image/images",
+            error: function (data) {
+                alert("There was a problem");
+            },
+            success: function (data) {
+                var list=data;
+                for(var i=0;i<list.length;i++){
+                    alert(list[0].fileName);
+                    $("#ccc").attr("src",list[0].cdnUrl);
+                }
+                console.log(data);
+            }
+        });
+    }
+</script>
+<script src="http://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
 </body>
 </html>
